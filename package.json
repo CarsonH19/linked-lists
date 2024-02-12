@@ -1,7 +1,6 @@
 {
   "name": "repository-template",
   "version": "1.0.0",
-  "type": "module",
   "description": "Repository Template",
   "main": "index.js",
   "scripts": {

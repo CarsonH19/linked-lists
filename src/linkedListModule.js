@@ -58,8 +58,8 @@ export class LinkedList {
   }
 
   pop() {
-    if (!this._head) return null;
-    let current = this._head;
+    if (!this.head) return null;
+    let current = this.head;
     let previous = null;
     while (current.nextNode) {
       previous = current;
@@ -67,17 +67,17 @@ export class LinkedList {
     }
     if (previous) {
       previous.nextNode = null;
-      this._tail = previous;
+      this.tail = previous;
     } else {
-      this._head = null;
-      this._tail = null;
+      this.head = null;
+      this.tail = null;
     }
-    this._length--;
+    this.length--;
     return current;
   }
 
   contains(value) {
-    let current = this._head;
+    let current = this.head;
     while (current) {
       if (current.value === value) {
         return true;
@@ -88,7 +88,7 @@ export class LinkedList {
   }
 
   find(value) {
-    let current = this._head;
+    let current = this.head;
     let index = 0;
     while (current) {
       if (current.value === value) {
@@ -101,12 +101,12 @@ export class LinkedList {
   }
 
   toString() {
-    let result = "";
-    let current = this._head;
-    while (current) {
+    let result = '';
+    let current = this.head;
+    for (let i = 0; i < this.length; i++) {
       result += `(${current.value}) -> `;
       current = current.nextNode;
-    }
+  }
     result += "null";
     return result;
   }

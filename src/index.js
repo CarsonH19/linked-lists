@@ -11,12 +11,13 @@ listOfNames.append("Ashton");
 listOfNames.append("Sam");
 listOfNames.append("Katlyn");
 
-console.log(listOfNames.toString(" "));
+console.log(listOfNames.toString());
 console.log(listOfNames.listSize());
 console.log(listOfNames.listHead());
 console.log(listOfNames.listTail());
 console.log(listOfNames.at("Joohee"));
 listOfNames.pop();
-console.log(listOfNames.toString(" "));
-console.log(listOfNames.contains("Sam"));
-console.log(listOfNames.find("Jacob"))
+console.log(listOfNames.toString());
+console.log(listOfNames.contains("Jacob"));
+console.log(listOfNames.find("(Sam)"))
+console.log(listOfNames.listSize());
