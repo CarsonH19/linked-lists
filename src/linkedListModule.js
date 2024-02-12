@@ -32,7 +32,7 @@ export class LinkedList {
     }
     this.length++;
   }
-  
+
   listSize() {
     return this.length;
   }
@@ -52,8 +52,62 @@ export class LinkedList {
     let count = 0;
     while (count < index) {
       current = current.nextNode;
-      count++
+      count++;
     }
     return current;
+  }
+
+  pop() {
+    if (!this._head) return null;
+    let current = this._head;
+    let previous = null;
+    while (current.nextNode) {
+      previous = current;
+      current = current.nextNode;
+    }
+    if (previous) {
+      previous.nextNode = null;
+      this._tail = previous;
+    } else {
+      this._head = null;
+      this._tail = null;
+    }
+    this._length--;
+    return current;
+  }
+
+  contains(value) {
+    let current = this._head;
+    while (current) {
+      if (current.value === value) {
+        return true;
+      }
+      current = current.nextNode;
+    }
+    return false;
+  }
+
+  find(value) {
+    let current = this._head;
+    let index = 0;
+    while (current) {
+      if (current.value === value) {
+        return index;
+      }
+      current = current.nextNode;
+      index++;
+    }
+    return null;
+  }
+
+  toString() {
+    let result = "";
+    let current = this._head;
+    while (current) {
+      result += `(${current.value}) -> `;
+      current = current.nextNode;
+    }
+    result += "null";
+    return result;
   }
 }
